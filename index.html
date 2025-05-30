@@ -3,149 +3,177 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AI | ML | Data Analysis Workspace</title>
+  <title>AI | ML | Data Analyst Portfolio</title>
   <style>
     * { box-sizing: border-box; }
     body {
-      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      background: #f8f9fb;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f6fa;
       color: #333;
     }
 
     header {
-      background: linear-gradient(to right, #667eea, #764ba2);
+      background: linear-gradient(to right, #4f46e5, #3b82f6);
       color: white;
-      padding: 2rem 1rem;
+      padding: 4rem 2rem;
       text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
     header h1 {
       margin: 0;
-      font-size: 2rem;
+      font-size: 2.5rem;
     }
 
-    nav {
-      display: flex;
-      justify-content: center;
-      background: #fff;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    }
-
-    nav button {
-      flex: 1;
-      padding: 1rem;
-      background: none;
-      border: none;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    nav button.active,
-    nav button:hover {
-      background: #e0e0ff;
-      font-weight: bold;
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
     }
 
     .container {
-      max-width: 1200px;
+      max-width: 1000px;
       margin: 2rem auto;
-      padding: 1rem;
+      padding: 0 1rem;
     }
 
-    .tab-content {
-      display: none;
-      animation: fadeIn 0.3s ease-in-out;
-    }
-
-    .tab-content.active {
-      display: block;
-    }
-
-    .workspace {
+    section {
       background: white;
       border-radius: 12px;
-      padding: 1.5rem;
-      margin-top: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
       box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     }
 
-    .workspace h3 {
+    h2 {
       margin-top: 0;
-      color: #4a4a4a;
+      font-size: 1.5rem;
+      border-left: 4px solid #6366f1;
+      padding-left: 0.5rem;
+      color: #4f46e5;
     }
 
-    .placeholder {
-      height: 200px;
-      border: 2px dashed #ccc;
-      border-radius: 8px;
+    ul.skills {
+      list-style: none;
+      padding: 0;
       display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #aaa;
-      font-style: italic;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    ul.skills li {
+      background: #eef2ff;
+      color: #3730a3;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.9rem;
+    }
+
+    .project {
       margin-top: 1rem;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+    .project h3 {
+      margin-bottom: 0.3rem;
+      color: #1e3a8a;
+    }
+
+    .workspace {
+      border: 2px dashed #ccc;
+      border-radius: 8px;
+      padding: 2rem;
+      margin-top: 1rem;
+      text-align: center;
+      color: #999;
+      font-style: italic;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    a {
+      color: #3b82f6;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
 
     @media (max-width: 768px) {
-      nav button { font-size: 0.9rem; padding: 0.8rem; }
-      header h1 { font-size: 1.5rem; }
+      header h1 { font-size: 2rem; }
+      .skills { flex-direction: column; }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>AI / ML / Data Analysis Demo Workspace</h1>
+  <h1>Your Name</h1>
+  <p>AI Engineer | Machine Learning Developer | Data Analyst</p>
 </header>
 
-<nav>
-  <button class="tab-btn active" onclick="showTab('ai')">AI</button>
-  <button class="tab-btn" onclick="showTab('ml')">Machine Learning</button>
-  <button class="tab-btn" onclick="showTab('data')">Data Analysis</button>
-</nav>
-
 <div class="container">
-  <section id="ai" class="tab-content active">
-    <div class="workspace">
-      <h3>Artificial Intelligence</h3>
-      <p>This space is for AI-related demos like chatbots, vision, planning, etc.</p>
-      <div class="placeholder">[ Insert AI demo, e.g., chatbot, face detection, etc. ]</div>
-    </div>
+
+  <section>
+    <h2>About Me</h2>
+    <p>I’m passionate about building intelligent systems that learn from data and provide actionable insights. I have hands-on experience in deep learning, data visualization, and deploying models in production.</p>
   </section>
 
-  <section id="ml" class="tab-content">
-    <div class="workspace">
-      <h3>Machine Learning</h3>
-      <p>Add model training visualizations or explain decision trees, SVMs, etc.</p>
-      <div class="placeholder">[ Insert ML workspace: model output, code blocks, graphs ]</div>
-    </div>
+  <section>
+    <h2>Skills</h2>
+    <ul class="skills">
+      <li>Python</li>
+      <li>TensorFlow / Keras</li>
+      <li>PyTorch</li>
+      <li>Pandas & NumPy</li>
+      <li>Scikit-learn</li>
+      <li>Data Visualization</li>
+      <li>Deep Learning</li>
+      <li>Natural Language Processing</li>
+      <li>SQL</li>
+      <li>Git</li>
+    </ul>
   </section>
 
-  <section id="data" class="tab-content">
-    <div class="workspace">
-      <h3>Data Analysis</h3>
-      <p>This section can be used for plotting charts, correlation analysis, or showing insights.</p>
-      <div class="placeholder">[ Insert charts, CSV analysis, filters, etc. ]</div>
+  <section>
+    <h2>Projects</h2>
+
+    <div class="project">
+      <h3>AI Chatbot Demo</h3>
+      <p>Rule-based chatbot implemented in JavaScript (expandable with NLP models).</p>
+      <div class="workspace">[ Chatbot interface placeholder ]</div>
     </div>
+
+    <div class="project">
+      <h3>ML Regression Visualizer</h3>
+      <p>Simple linear regression line visualized with canvas or Chart.js.</p>
+      <div class="workspace">[ Regression plot placeholder ]</div>
+    </div>
+
+    <div class="project">
+      <h3>Data Explorer Tool</h3>
+      <p>Interactive scatterplot or CSV parser for exploring real-world datasets.</p>
+      <div class="workspace">[ Data analysis interface placeholder ]</div>
+    </div>
+
   </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+    <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
+  </section>
+
 </div>
 
-<script>
-  function showTab(tabId) {
-    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-    document.getElementById(tabId).classList.add('active');
-    event.target.classList.add('active');
-  }
-</script>
+<footer>
+  &copy; 2025 Your Name. All rights reserved.
+</footer>
 
 </body>
 </html>
