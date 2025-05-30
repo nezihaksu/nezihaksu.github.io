@@ -1,63 +1,70 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Your Name | AI Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Data Science Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <header>
-    <h1>Your Name</h1>
-    <p>AI Engineer | Machine Learning Developer | Data Analyst</p>
-  </header>
-
-  <nav>
-    <button onclick="showSection('about')">About</button>
-    <button onclick="showSection('skills')">Skills</button>
-    <button onclick="showSection('projects')">Projects</button>
-    <button onclick="showSection('contact')">Contact</button>
+  <nav class="navbar">
+    <h1>DataScience Portfolio</h1>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#analytics">Analytics</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </nav>
 
-  <main>
-    <section id="about" class="active">
-      <h2>About Me</h2>
-      <p>I specialize in developing intelligent systems that learn from data and uncover insights. This portfolio highlights my expertise in AI, machine learning, and data analysis.</p>
-    </section>
+  <section id="home" class="hero">
+    <h2>Data Science Portfolio</h2>
+    <p>Transforming data into actionable insights through advanced analytics, machine learning, and AI</p>
+    <div class="buttons">
+      <a href="#projects" class="btn primary">View My Work</a>
+      <a href="#contact" class="btn secondary">Get In Touch</a>
+    </div>
+  </section>
 
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li>Python</li><li>TensorFlow</li><li>PyTorch</li><li>Scikit-learn</li>
-        <li>Data Visualization</li><li>Pandas</li><li>SQL</li><li>Git</li>
-      </ul>
-    </section>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I’m a data scientist with expertise in machine learning and advanced analytics. I specialize in extracting insights from data and building predictive models.</p>
+  </section>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="project">
-        <h3>AI Chatbot</h3>
-        <p>A conversational bot using JavaScript and NLP.</p>
-        <div class="workspace">[ Chatbot demo area ]</div>
+  <section id="analytics">
+    <h2>Analytics</h2>
+    <div class="charts">
+      <canvas id="chart1"></canvas>
+      <canvas id="chart2"></canvas>
+      <canvas id="chart3"></canvas>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Featured Projects</h2>
+    <div class="project-cards">
+      <div class="card">
+        <h3>Customer Churn Model</h3>
+        <p>Predicting customer churn with 94% accuracy using XGBoost and feature importance.</p>
       </div>
-      <div class="project">
-        <h3>ML Visualizer</h3>
-        <p>Linear regression visualization with interactive charts.</p>
-        <div class="workspace">[ Regression plot area ]</div>
+      <div class="card">
+        <h3>Sales Dashboard</h3>
+        <p>Real-time dashboard using Plotly and Streamlit for sales forecasting.</p>
       </div>
-    </section>
+      <div class="card">
+        <h3>Computer Vision Classifier</h3>
+        <p>Deep learning CNN with transfer learning to classify images.</p>
+      </div>
+    </div>
+  </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: your.email@example.com</p>
-      <p>GitHub: github.com/yourusername</p>
-      <p>LinkedIn: linkedin.com/in/yourprofile</p>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Your Name</p>
-  </footer>
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: your.email@example.com</p>
+  </section>
 
   <script src="script.js"></script>
 </body>
