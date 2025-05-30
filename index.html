@@ -1,134 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AI, ML & Data Analysis Demo</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI | ML | Data Analysis Workspace</title>
   <style>
+    * { box-sizing: border-box; }
     body {
-      font-family: Arial, sans-serif;
-      margin: 0; padding: 0;
-      background: #f4f4f4;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #f8f9fb;
       color: #333;
     }
+
     header {
-      background: #4CAF50;
+      background: linear-gradient(to right, #667eea, #764ba2);
       color: white;
-      padding: 1rem;
+      padding: 2rem 1rem;
       text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
     nav {
       display: flex;
       justify-content: center;
-      background: #333;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
+
     nav button {
-      background: #333;
-      color: white;
-      border: none;
+      flex: 1;
       padding: 1rem;
-      cursor: pointer;
+      background: none;
+      border: none;
       font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
     }
+
+    nav button.active,
     nav button:hover {
-      background: #555;
+      background: #e0e0ff;
+      font-weight: bold;
     }
+
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
     .tab-content {
       display: none;
-      padding: 2rem;
-      animation: fadeIn 0.5s ease-in-out;
+      animation: fadeIn 0.3s ease-in-out;
     }
-    .active {
+
+    .tab-content.active {
       display: block;
     }
-    canvas {
-      border: 1px solid #ccc;
+
+    .workspace {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .workspace h3 {
+      margin-top: 0;
+      color: #4a4a4a;
+    }
+
+    .placeholder {
+      height: 200px;
+      border: 2px dashed #ccc;
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #aaa;
+      font-style: italic;
       margin-top: 1rem;
     }
+
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      nav button { font-size: 0.9rem; padding: 0.8rem; }
+      header h1 { font-size: 1.5rem; }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>Explore AI, Machine Learning & Data Analysis</h1>
+  <h1>AI / ML / Data Analysis Demo Workspace</h1>
 </header>
 
 <nav>
-  <button onclick="showTab('ai')">AI</button>
-  <button onclick="showTab('ml')">Machine Learning</button>
-  <button onclick="showTab('data')">Data Analysis</button>
+  <button class="tab-btn active" onclick="showTab('ai')">AI</button>
+  <button class="tab-btn" onclick="showTab('ml')">Machine Learning</button>
+  <button class="tab-btn" onclick="showTab('data')">Data Analysis</button>
 </nav>
 
-<section id="ai" class="tab-content active">
-  <h2>Artificial Intelligence</h2>
-  <p>AI simulates human intelligence processes using machines. It powers chatbots, recommendation systems, and more.</p>
-  <p><strong>Example:</strong> A simple rule-based chatbot simulation:</p>
-  <input id="aiInput" placeholder="Say hi or ask a question" oninput="aiResponse()" />
-  <p id="aiOutput">...</p>
-</section>
+<div class="container">
+  <section id="ai" class="tab-content active">
+    <div class="workspace">
+      <h3>Artificial Intelligence</h3>
+      <p>This space is for AI-related demos like chatbots, vision, planning, etc.</p>
+      <div class="placeholder">[ Insert AI demo, e.g., chatbot, face detection, etc. ]</div>
+    </div>
+  </section>
 
-<section id="ml" class="tab-content">
-  <h2>Machine Learning</h2>
-  <p>ML allows systems to learn from data and improve automatically.</p>
-  <p><strong>Example:</strong> A toy linear regression visual:</p>
-  <canvas id="mlCanvas" width="400" height="300"></canvas>
-</section>
+  <section id="ml" class="tab-content">
+    <div class="workspace">
+      <h3>Machine Learning</h3>
+      <p>Add model training visualizations or explain decision trees, SVMs, etc.</p>
+      <div class="placeholder">[ Insert ML workspace: model output, code blocks, graphs ]</div>
+    </div>
+  </section>
 
-<section id="data" class="tab-content">
-  <h2>Data Analysis</h2>
-  <p>Analyzing raw data to find trends and insights.</p>
-  <p><strong>Example:</strong> Scatter plot with a trend line:</p>
-  <canvas id="dataCanvas" width="400" height="300"></canvas>
-</section>
+  <section id="data" class="tab-content">
+    <div class="workspace">
+      <h3>Data Analysis</h3>
+      <p>This section can be used for plotting charts, correlation analysis, or showing insights.</p>
+      <div class="placeholder">[ Insert charts, CSV analysis, filters, etc. ]</div>
+    </div>
+  </section>
+</div>
 
 <script>
-  function showTab(id) {
-    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
+  function showTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+    document.getElementById(tabId).classList.add('active');
+    event.target.classList.add('active');
   }
-
-  function aiResponse() {
-    const input = document.getElementById("aiInput").value.toLowerCase();
-    const output = document.getElementById("aiOutput");
-    if (input.includes("hello") || input.includes("hi")) {
-      output.textContent = "Hello! I'm an AI demo.";
-    } else if (input.includes("weather")) {
-      output.textContent = "I'm not connected to the internet, but it's probably sunny!";
-    } else if (input.trim()) {
-      output.textContent = "That's interesting! Tell me more.";
-    } else {
-      output.textContent = "...";
-    }
-  }
-
-  // ML Canvas – Toy linear regression line
-  const mlCtx = document.getElementById("mlCanvas").getContext("2d");
-  mlCtx.fillStyle = "#eef";
-  mlCtx.fillRect(0, 0, 400, 300);
-  mlCtx.fillStyle = "#333";
-  mlCtx.fillText("y = 2x + 1", 10, 20);
-  mlCtx.beginPath();
-  mlCtx.moveTo(0, 299);
-  mlCtx.lineTo(400, 100);
-  mlCtx.strokeStyle = "blue";
-  mlCtx.stroke();
-
-  // Data Canvas – Scatter plot
-  const dataCtx = document.getElementById("dataCanvas").getContext("2d");
-  const points = [ [10, 280], [50, 250], [100, 200], [150, 160], [200, 130], [250, 100], [300, 70] ];
-  dataCtx.fillStyle = "#eee";
-  dataCtx.fillRect(0, 0, 400, 300);
-  dataCtx.fillStyle = "green";
-  points.forEach(p => dataCtx.fillRect(p[0]-2, p[1]-2, 5, 5));
-  dataCtx.beginPath();
-  dataCtx.moveTo(10, 280);
-  dataCtx.lineTo(300, 70);
-  dataCtx.strokeStyle = "red";
-  dataCtx.stroke();
 </script>
 
 </body>
