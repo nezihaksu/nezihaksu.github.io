@@ -1,42 +1,30 @@
 
-document.addEventListener('DOMContentLoaded', () => {
-  const buttons = document.querySelectorAll('nav button');
-  const sections = document.querySelectorAll('main section');
-  const headerTitle = document.querySelector('header h1');
-
-  // Typing effect for header
-  const fullText = "Your Name";
-  let i = 0;
-  function typeEffect() {
-    if (i < fullText.length) {
-      headerTitle.textContent += fullText.charAt(i);
-      i++;
-      setTimeout(typeEffect, 150);
+const ctx1 = document.getElementById('chart1').getContext('2d');
+new Chart(ctx1, {
+    type: 'line',
+    data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+        datasets: [{ label: 'Accuracy', data: [89, 90, 91, 90, 92], borderColor: '#00ffcc' }]
     }
-  }
-  headerTitle.textContent = "";
-  typeEffect();
+});
 
-  // Function to show section
-  function showSection(id) {
-    sections.forEach(sec => sec.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
+const ctx2 = document.getElementById('chart2').getContext('2d');
+new Chart(ctx2, {
+    type: 'bar',
+    data: {
+        labels: ['A', 'B', 'C', 'D', 'E'],
+        datasets: [{ label: 'Feature Dist.', data: [30, 50, 75, 40, 60], backgroundColor: '#ff6384' }]
+    }
+});
 
-    buttons.forEach(btn => btn.classList.remove('active'));
-    document.querySelector(`nav button[onclick="showSection('${id}')"]`).classList.add('active');
-
-    localStorage.setItem('activeSection', id);
-  }
-
-  // Initialize nav buttons
-  buttons.forEach(button => {
-    button.addEventListener('click', () => {
-      const sectionId = button.getAttribute('onclick').match(/'(.*)'/)[1];
-      showSection(sectionId);
-    });
-  });
-
-  // Load last active section from storage
-  const savedSection = localStorage.getItem('activeSection') || 'about';
-  showSection(savedSection);
+const ctx3 = document.getElementById('chart3').getContext('2d');
+new Chart(ctx3, {
+    type: 'line',
+    data: {
+        labels: ['T1', 'T2', 'T3', 'T4'],
+        datasets: [
+            { label: 'Actual', data: [100, 110, 105, 115], borderColor: 'green' },
+            { label: 'Predicted', data: [98, 112, 107, 113], borderColor: 'orange' }
+        ]
+    }
 });
