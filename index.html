@@ -1,70 +1,44 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Data Science Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced AI/ML Portfolio</title>
+  <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <nav class="navbar">
-    <h1>DataScience Portfolio</h1>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#analytics">Analytics</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <section id="home" class="hero">
-    <h2>Data Science Portfolio</h2>
-    <p>Transforming data into actionable insights through advanced analytics, machine learning, and AI</p>
-    <div class="buttons">
-      <a href="#projects" class="btn primary">View My Work</a>
-      <a href="#contact" class="btn secondary">Get In Touch</a>
-    </div>
-  </section>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I’m a data scientist with expertise in machine learning and advanced analytics. I specialize in extracting insights from data and building predictive models.</p>
-  </section>
-
-  <section id="analytics">
-    <h2>Analytics</h2>
-    <div class="charts">
-      <canvas id="chart1"></canvas>
-      <canvas id="chart2"></canvas>
-      <canvas id="chart3"></canvas>
-    </div>
-  </section>
-
-  <section id="projects">
-    <h2>Featured Projects</h2>
-    <div class="project-cards">
-      <div class="card">
-        <h3>Customer Churn Model</h3>
-        <p>Predicting customer churn with 94% accuracy using XGBoost and feature importance.</p>
-      </div>
-      <div class="card">
-        <h3>Sales Dashboard</h3>
-        <p>Real-time dashboard using Plotly and Streamlit for sales forecasting.</p>
-      </div>
-      <div class="card">
-        <h3>Computer Vision Classifier</h3>
-        <p>Deep learning CNN with transfer learning to classify images.</p>
+  <header class="hero">
+    <div class="intro">
+      <h1>Your Name</h1>
+      <p class="title">AI/ML Engineer & Data Scientist</p>
+      <p class="summary">Building intelligent systems end-to-end: from data ingestion to model deployment.</p>
+      <div class="btn-group">
+        <button onclick="showSection('data')" class="neon-btn">Data Explorer</button>
+        <button onclick="showSection('train')" class="neon-btn">Model Trainer</button>
+        <button onclick="showSection('ai')" class="neon-btn">AI Demo</button>
       </div>
     </div>
-  </section>
+  </header>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p>Email: your.email@example.com</p>
-  </section>
+  <main>
+    <section id="data" class="content-section">
+      <h2>Data Explorer</h2>
+      <canvas id="dataChart" width="500" height="300"></canvas>
+    </section>
+    <section id="train" class="content-section">
+      <h2>Model Trainer</h2>
+      <canvas id="trainChart" width="500" height="300"></canvas>
+    </section>
+    <section id="ai" class="content-section">
+      <h2>AI Model Predictions</h2>
+      <canvas id="aiChart" width="500" height="300"></canvas>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Your Name</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
