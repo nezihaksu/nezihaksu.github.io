@@ -1,42 +1,63 @@
-
 body {
-  margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom right, #1a1a40, #2e0059);
+  margin: 0;
+  background: #f4f6fa;
+  color: #333;
+}
+header {
+  background: linear-gradient(to right, #4f46e5, #3b82f6);
   color: white;
-}
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  background-color: #111;
-  padding: 1rem 2rem;
-}
-.navbar h1 { color: #00d4ff; }
-.navbar ul { list-style: none; display: flex; gap: 1rem; }
-.navbar ul li a { color: white; text-decoration: none; }
-
-.hero {
+  padding: 3rem 1rem;
   text-align: center;
-  padding: 5rem 2rem;
-  background: linear-gradient(to right, #6a11cb, #2575fc);
 }
-.hero .btn {
-  margin: 1rem;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
+nav {
+  display: flex;
+  justify-content: center;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-.primary { background-color: #007bff; color: white; }
-.secondary { background-color: #fff; color: #007bff; }
-
-section { padding: 4rem 2rem; max-width: 1000px; margin: auto; }
-.project-cards { display: flex; gap: 1rem; flex-wrap: wrap; }
-.card {
-  background-color: #222;
+nav button {
   padding: 1rem;
-  border-radius: 12px;
-  flex: 1 1 calc(33% - 1rem);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
 }
-.charts canvas { background: #111; border-radius: 8px; padding: 1rem; margin-bottom: 1rem; width: 100%; }
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+section {
+  display: none;
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+section.active {
+  display: block;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+ul li {
+  background: #eef2ff;
+  margin: 0.3rem 0;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+.workspace {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 2px dashed #ccc;
+  text-align: center;
+  font-style: italic;
+}
+footer {
+  text-align: center;
+  padding: 1rem;
+  color: #777;
+  font-size: 0.9rem;
+}
